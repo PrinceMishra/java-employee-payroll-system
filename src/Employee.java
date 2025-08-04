@@ -2,18 +2,22 @@ import java.time.LocalDate;
 
 public abstract class Employee {
 
-    private int empId;
+    private static int empCalculateId;
+    private final long empAadharId;
     private String empName;
     private LocalDate empJoiningDate;
+    private long empMobileNo;
+    private long empId;
 
-    Employee(int empId,String empName, LocalDate empDob){
-        this.empId=empId;
+    Employee(int empAadharId, String empName, LocalDate empJoiningDate){
+        empId=empCalculateId++;
+        this.empAadharId = empAadharId;
         this.empName=empName;
-        this.empJoiningDate =empDob;
+        this.empJoiningDate =empJoiningDate;
     }
 
-    public int getEmpId() {
-        return empId;
+    public long getEmpAadharId() {
+        return empAadharId;
     }
     public String getEmpName(){
         return empName;
@@ -21,10 +25,24 @@ public abstract class Employee {
     public LocalDate getEmpJoiningDate() {
         return empJoiningDate;
     }
+    public long getEmpMobileNo(){
+        return empMobileNo;
+    }
+    public long getEmpId(){
+        return empId;
+    }
+
+    public void setEmpName(String empUpdatedName){
+        this.empName=empUpdatedName;
+    }
+
+    public void setEmpMobileNo(long empMobileNo){
+        this.empMobileNo=empMobileNo;
+    }
 
     @Override
     public String toString() {
-        return "Employee Id : "+empId+" Employee Name : "+empName+" Employee Joining Date : "+empJoiningDate;
+        return "Employee Id : "+ empAadharId +" Employee Name : "+empName+" Employee Joining Date : "+empJoiningDate;
     }
 
     public abstract double empSalary();
