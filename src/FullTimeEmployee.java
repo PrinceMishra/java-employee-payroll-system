@@ -4,15 +4,15 @@ public class FullTimeEmployee extends Employee {
 
     private final double empMonthlySalary;
 
-    FullTimeEmployee(int empId, String empName, LocalDate empDob, double empSalary){
+    FullTimeEmployee(int empAadharId, String empName, LocalDate empDateOfJoining, double empMonthlySalary){
 
-        super(empId, empName, empDob);
-        this.empMonthlySalary = empSalary;
+        super(empAadharId, empName, empDateOfJoining);
+        this.empMonthlySalary = empMonthlySalary;
 
     }
 
     @Override
-    public double empSalary() {
+    public double getEmpMonthlySalary() {
         return empMonthlySalary;
     }
 }
