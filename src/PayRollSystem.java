@@ -12,7 +12,7 @@ public class PayRollSystem {
             employeeList=new ArrayList<>();
     }
 
-    public void addEmployee(Employee emp){
+    public voidaddEmployee(Employee emp){
              employeeList.add(emp);
     }
 
@@ -144,6 +144,7 @@ public class PayRollSystem {
                          else if (choiceEmployee == 2) {
                              System.out.println("Please enter employee's Aadhar number : ");
                              int empAadharNumber = sc.nextInt();
+                             sc.nextLine();
                              System.out.println("Please enter employee's name : ");
                              String empName = sc.nextLine();
                              DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
