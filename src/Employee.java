@@ -17,6 +17,10 @@ public abstract class Employee {
         this.empId=empCalculateId;
     }
 
+    public static int getEmpCalculateId() {
+        return empCalculateId;
+    }
+
     public long getEmpAadharId() {
         return empAadharId;
     }

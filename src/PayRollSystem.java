@@ -183,10 +183,25 @@ public class PayRollSystem {
                          deleteEmployee(empDeleteAadharId);
                          break;
 
+                     case 5:
+                         System.out.println("Enter aadhar Id to generate employee's payslip: ");
+                         int empPaySlipAadharId= sc.nextInt();
+                         deleteEmployee(empPaySlipAadharId);
+                         break;
+
+
+                     case 6:
+                         System.out.println("Listing all Employees:  ");
+                         viewEmployeeList();
+                         break;
+
+
+                     case 7:
+                         System.out.println("Total number of Employees: ");
+                         Employee.getEmpCalculateId();
+                         break;
+
                  }
-
-
-
 
              }
     }
