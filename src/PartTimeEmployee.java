@@ -5,8 +5,10 @@ public class PartTimeEmployee extends Employee {
     private double empWorkHours;
     private double empWorkHourRate;
 
-    PartTimeEmployee(int empAadharId, String empName, LocalDate empJoiningDate, double empWorkHours, double empWorkHourRate){
-        super(empAadharId,empName,empJoiningDate);
+    PartTimeEmployee(int empAadharId, String empName,long empMobilNo, LocalDate empJoiningDate, double empWorkHours, double empWorkHourRate){
+        super(empAadharId,empName,empMobilNo,empJoiningDate);
+        this.empWorkHours=empWorkHours;
+        this.empWorkHourRate=empWorkHourRate;
     }
 
     public double getEmpWorkHours(){
@@ -18,7 +20,7 @@ public class PartTimeEmployee extends Employee {
     }
 
     @Override
-    public double getEmpMonthlySalary() {
+    public double getEmpTotalSalary() {
         return empWorkHourRate * empWorkHours;
     }
 

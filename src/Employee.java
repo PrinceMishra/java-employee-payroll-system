@@ -9,12 +9,13 @@ public abstract class Employee {
     private long empMobileNo;
     private long empId;
 
-    Employee(int empAadharId, String empName, LocalDate empJoiningDate){
+    Employee(int empAadharId, String empName,long empMobileNo, LocalDate empJoiningDate){
         empCalculateId++;
         this.empAadharId = empAadharId;
         this.empName=empName;
         this.empJoiningDate =empJoiningDate;
         this.empId=empCalculateId;
+        this.empMobileNo=empMobileNo;
     }
 
     public static int getEmpCalculateId() {
@@ -33,9 +34,6 @@ public abstract class Employee {
     public long getEmpMobileNo(){
         return empMobileNo;
     }
-    public long getEmpId(){
-        return empId;
-    }
 
     public void setEmpName(String empUpdatedName){
         this.empName=empUpdatedName;
@@ -45,10 +43,14 @@ public abstract class Employee {
         this.empMobileNo=empMobileNo;
     }
 
-    @Override
-    public String toString() {
-        return "Employee Id : "+ empAadharId +" Employee Name : "+empName+" Employee Joining Date : "+empJoiningDate;
+    public long getEmpId(){
+        return empId;
     }
 
-    public abstract double getEmpMonthlySalary();
+    @Override
+    public String toString() {
+        return "Employee Id : "+ empAadharId +",\n Employee Name : "+empName+ ",\n Employee Mobile No. : "+empMobileNo+",\n Employee Joining Date : "+empJoiningDate;
+    }
+
+    public abstract double getEmpTotalSalary();
 }
